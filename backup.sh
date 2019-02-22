@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 ## VARIABLES
 
 currentDate=$(date +"%Y%m%d")
