@@ -12,10 +12,10 @@ read date
 ssh root@192.168.33.200 'sudo -u www-data php /var/www/html/nextcloud/occ maintenance:mode --on'
 
 # Verrouillage de la snapshot
-zfs hold keep data/backup@nextcloud_$date
+# zfs hold keep data/backup@nextcloud_$date
 
 # Clone de la snapshot
-zfs clone date/backup@nextcloud_$date data/restore
+zfs clone data/backup@nextcloud_$date data/restore
 
 # Restauration des fichiers du serveur NextCloud
 rsync -Aavx /data/restore/nextcloud-data/ -e "ssh" root@192.168.33.200:/var/www/html/nextcloud/
